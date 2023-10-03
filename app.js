@@ -1,17 +1,23 @@
-const http=require('http');
-
-const adminRouter=require('./routes/admin');
-const shopRouter=require('./routes/shop');
-const express=require('express');
+const path=require('path');
+const express = require('express');
 const bodyParser = require('body-parser');
 
-const app=express();
-app.use(bodyParser.urlencoded({extended:false}));
+const app = express();
 
-app.use('/admin',adminRouter);
-app.use('/shop',shopRouter);
-app.use((req,res,next)=>{
-    res.status(404).send('<h1>Page not found</h1>')
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+const contactusRoutes=require('./routes/contactus');
+const successRoutes=require('./routes/success');
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(adminRoutes);
+app.use(shopRoutes);
+app.use(contactusRoutes);
+app.use(successRoutes);
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname,'views','pagenotfound.html'));
 });
 
-app.listen(4000);
+app.listen(3000);

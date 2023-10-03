@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        .header{
+            background-color: aqua;
+            height: 50px;
+            margin-bottom: 20px;
+            padding: 0;
+            
+        }
+        .nav{
+            align-content: center;
+        }
+        .ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            float: right;
+            list-style: none;
+            align-items: center;
+        }
+        .list a{
+            text-decoration: none;
+            margin: 5px;
+            color: black;
+            
+        }
+        .list a:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul class="ul">
+                <li class="list"><a href="/">Shop</a></li>
+                <li class="list"><a href="/admin/add-product">Add Product</a></li>
+                <li class="list"><a href="/contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/success">
+            <h2>Book a call</h2>
+            <input type="text" placeholder="name" >
+            <input type="email" placeholder="email" >
+            <input type="text" placeholder="phone" >
+            <input type="date">
+            <input type="time">
+            <input type="submit" name="submit" >
+        </form>
+    </main>
+</body>
+</html>
