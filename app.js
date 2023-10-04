@@ -6,8 +6,8 @@ const app = express();
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
-const contactusRoutes=require('./routes/contactus');
-const successRoutes=require('./routes/success');
+const contactusRoutes=require('./routes/contactus.js');
+const successRoutes=require('./routes/success.js');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
